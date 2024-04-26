@@ -1,3 +1,4 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -6,9 +7,10 @@ body {
     color: #333;
     background-color: #f4f4f4;
 }
+
 header {
-    background-color: #000; /* header background */
-    padding: 10px 20px; /* padding inside the header */
+    background-color: #000;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
 }
@@ -22,16 +24,16 @@ header {
 }
 
 .logo, .header-nav {
-    flex: 1; /* Assign flex grow */
+    flex: 1;
 }
 
 .logo {
-    max-width: 100px; /* Adjust logo size as needed */
-    margin-right: 20px; /* Spacing between logo and nav items */
+    max-width: 100px;
+    margin-right: 20px;
 }
 
 header nav {
-    flex-grow: 1; /* Allows nav to take up available space */
+    flex-grow: 1;
 }
 
 header nav ul {
@@ -39,11 +41,11 @@ header nav ul {
     display: flex;
     margin: 0;
     padding: 0;
-    align-items: left; /* Aligns nav items to the left */
+    align-items: left;
 }
 
 header nav ul li {
-    margin-right: 20px; /* Spacing between nav items */
+    margin-right: 20px;
 }
 
 header nav ul li a {
@@ -52,50 +54,71 @@ header nav ul li a {
     font-weight: bold;
 }
 
+/* Quote button */
 .quote-button {
     padding: 10px 15px;
     border-radius: 5px;
-    background-color: blue; /* button color */
+    background-color: #4a90e2;
     color: white;
     text-decoration: none;
-    margin-left: auto; /* Pushes the button to the right */
-}
-
-
-.quote-button {
-    background-color: #4a90e2; /* Orange color for the button */
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
+    margin-left: auto;
     transition: background-color 0.3s ease;
 }
 
 .quote-button:hover {
-    background-color: #blue; /* Darker orange on hover, adjust as needed */
+    background-color: #357abd; /* Darker shade on hover */
 }
 
-
+/* Hero image */
 .hero-image {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('https://dsm01pap008files.storage.live.com/y4mlsSPNa0Cg7g5hTHWsLj-XTn_AQBIKdr6q67nNks9xNK7ZHcf40f1MBPUoeVG1-O7ki6FmMCj8rqaD0ciaes69ZxV6DJo0fH49lQhPqFHzoByA2IzXSrSdhhSPCKEJsSGla1sAXg0tUgxvzlbCsqfMOqzHbfMsR4bma3y0xYPhQqS6WqRDbmXRFEzmLN70up4vPc16LaoTX2_8_0Yp5shcVAxuasT86ts2pA2n2T3PBU?encodeFailures=1&width=1394&height=872'); /* Replace with the path to your image */
-    height: 500px; /* Adjust based on your preference */
+    background-image: url('https://dsm01pap008files.storage.live.com/y4mlsSPNa0Cg7g5hTHWsLj-XTn_AQBIKdr6q67nNks9xNK7ZHcf40f1MBPUoeVG1-O7ki6FmMCj8rqaD0ciaes69ZxV6DJo0fH49lQhPqFHzoByA2IzXSrSdhhSPCKEJsSGla1sAXg0tUgxvzlbCsqfMOqzHbfMsR4bma3y0xYPhQqS6WqRDbmXRFEzmLN70up4vPc16LaoTX2_8_0Yp5shcVAxuasT86ts2pA2n2T3PBU?encodeFailures=1&width=1394&height=872');
+    height: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
 
+/* Hero text */
 .hero-text, .book-now {
     text-align: center;
+    color: white; /* Set text color to white for better visibility */
 }
 
 .hero-text {
-    margin-bottom: 20px; /* Adds space between the text and the book now button */
-	color:white;
+    margin-bottom: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    .header-inner {
+        padding: 0 20px;
+    }
+
+    .logo {
+        max-width: 80px; /* Adjust logo size for smaller screens */
+        margin-right: 10px; /* Decrease spacing between logo and nav items */
+    }
+
+    header nav ul li {
+        margin-right: 15px; /* Decrease spacing between nav items */
+    }
+
+    .hero-text {
+        font-size: 18px; /* Decrease font size for hero text */
+    }
+
+    .quote-button {
+        padding: 8px 12px; /* Decrease button padding */
+    }
 }
 
 .book-now p {
