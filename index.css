@@ -244,7 +244,6 @@ footer {
         display: none; /* Hides the Quick Links section on mobile devices */
     }
 }
-
 #services {
   text-align: center;
   padding: 50px 0;
@@ -375,7 +374,6 @@ footer {
         max-width: 100%; /* Full-width cards on small screens */
     }
 }
-
 #process {
   background-color: #fff;
   color: #333;
@@ -409,23 +407,11 @@ p {
   flex-basis: 20%; /* Initial width for desktop */
   margin: 10px;
   text-align: center;
-}
-
-@media (max-width: 960px) {
-  .step {
-    flex-basis: 33.333%; /* Three steps per row on medium screens */
-  }
-}
-
-@media (max-width: 600px) {
-  .step {
-    flex-basis: 50%; /* Two steps per row on small screens */
-  }
+  position: relative; /* Allow absolute positioning for children */
 }
 
 .arrow {
-  color: #333;
-  font-size: 24px;
+  display: none; /* Hide arrows by default */
 }
 
 .get-started {
@@ -442,52 +428,56 @@ p {
   transition: background-color 0.3s ease;
 }
 
-/* Additional hover effects for interactivity */
 .get-started:hover {
-  background-color: #357ABD; /* Darker shade on hover */
-}
-.get-started:hover {
-  background-color: #333;
+  background-color: #333; /* Darker shade on hover for the button */
 }
 
-/* Hide arrows on smaller screens and show on larger screens */
-@media (max-width: 768px) {
-  .arrow {
-    display: none;
+/* Desktop styles */
+@media (min-width: 601px) {
+  .step::before {
+    content: '→'; /* Arrow icon */
+    display: inline; /* Show arrow on desktop */
+    position: absolute;
+    top: 50%;
+    right: -30px; /* Positioning the arrow to the right */
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #333;
   }
 }
 
-@media (min-width: 769px) {
-  .arrow {
-    display: inline; /* Show arrow */
+/* Mobile styles */
+@media (max-width: 600px) {
+  .steps {
+    flex-direction: column; /* Stack steps vertically on mobile */
   }
-  .desktop-only {
-    display: inline; /* Show arrow on larger screens */
+
+  .step {
+    border: 1px solid #ccc; /* Border around each step */
+    border-radius: 8px; /* Rounded corners for the boxes */
+    background: #f9f9f9; /* Light background for each step box */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 20px;
+    margin-bottom: 20px; /* Space between steps */
+    position: relative;
+  }
+
+  .step::after {
+    content: '';
+    position: absolute;
+    height: 50px; /* Height of the line */
+    width: 2px; /* Thickness of the line */
+    background-color: #333;
+    left: 50%; /* Center the line horizontally */
+    bottom: -50px; /* Position the line below each step */
+    transform: translateX(-50%); /* Ensure the line is centered */
+  }
+
+  .step:last-child::after {
+    display: none; /* No line after the last step */
   }
 }
 
-@media (max-width: 1024px) {
-  .step, .arrow {
-    flex-basis: 100%; /* Full width for smaller screens */
-  }
-}
-
-/* Ensure FontAwesome is included in your HTML for icons */
-
-/* Show arrows on desktop and hide on mobile */
-@media (max-width: 768px) {
-  .arrow,
-  .desktop-only {
-    display: none;
-  }
-}
-
-@media (min-width: 769px) {
-  .arrow,
-  .desktop-only {
-    display: inline-block; /* Show arrow on larger screens */
-  }
-}
 
 #get-quote {
   background-color: #fafafa; /* Light grey background */
