@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Website-stylesheet.css">
     <title>Drone Aerial Photography Services</title>
 </head>
 <body>
@@ -53,46 +53,66 @@
         </div>
     </div>
 </section>
-<section id="why-us">
+<section id="why-us" style="position: relative; z-index: 1;">
     <h2>Why Choose Us?</h2>
-    <div class="reasons-container">
-        <div class="reason">
-            <i class="fas fa-camera-retro"></i> <!-- Icon for Unmatched Quality -->
-            <h3>Unmatched Quality</h3>
-            <p>Our drone photography delivers high-resolution, stunning images and videos that capture unparalleled views of your properties or events.</p>
+    <div class="swiper-container reasons-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide reason-card">
+                <i class="fas fa-camera-retro"></i>
+                <h3>Unmatched Quality</h3>
+                <p>Our drone photography delivers high-resolution, stunning images and videos that capture unparalleled views of your properties or events.</p>
+            </div>
+            <div class="swiper-slide reason-card">
+                <i class="fas fa-user-secret"></i>
+                <h3>Expert Pilots</h3>
+                <p>Our team consists of certified and experienced drone pilots who ensure safe and compliant flight operations, achieving the best angles and shots.</p>
+            </div>
+            <div class="swiper-slide reason-card">
+                <i class="fas fa-box-open"></i>
+                <h3>Customizable Packages</h3>
+                <p>We offer a variety of packages tailored to meet different needs and budgets, ensuring you get exactly what you need without overpaying.</p>
+            </div>
+            <div class="swiper-slide reason-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Advanced Technology</h3>
+                <p>We use the latest drone technology to provide you with the best quality of aerial photography and videography services available today.</p>
+            </div>
+            <div class="swiper-slide reason-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Reliable Support</h3>
+                <p>We offer 24/7 customer support to ensure you are never left in the dark with your queries and issues.</p>
+            </div>
+            <div class="swiper-slide reason-card">
+                <i class="fas fa-sync-alt"></i>
+                <h3>Flexible Scheduling</h3>
+                <p>Our scheduling is flexible, allowing you to book sessions at your convenience, fitting perfectly into your busy calendar.</p>
+            </div>
+            <div class="swiper-slide reason-card">
+                <i class="fas fa-thumbs-up"></i>
+                <h3>Client Satisfaction</h3>
+                <p>Client satisfaction is our top priority, and we strive to exceed expectations with every project we undertake.</p>
+            </div>
         </div>
-        <div class="reason">
-            <i class="fas fa-user-secret"></i> <!-- Icon for Expert Pilots -->
-            <h3>Expert Pilots</h3>
-            <p>Our team consists of certified and experienced drone pilots who ensure safe and compliant flight operations, achieving the best angles and shots.</p>
-        </div>
-        <div class="reason">
-            <i class="fas fa-box-open"></i> <!-- Icon for Customizable Packages -->
-            <h3>Customizable Packages</h3>
-            <p>We offer a variety of packages tailored to meet different needs and budgets, ensuring you get exactly what you need without overpaying.</p>
-        </div>
-        <div class="reason">
-            <i class="fas fa-cogs"></i> <!-- Icon for Advanced Technology -->
-            <h3>Advanced Technology</h3>
-            <p>We use the latest drone technology to provide you with the best quality of aerial photography and videography services available today.</p>
-        </div>
-		  <div class="reason">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Reliable Support</h3>
-            <p>We offer 24/7 customer support to ensure you are never left in the dark with your queries and issues.</p>
-        </div>
-        <div class="reason">
-            <i class="fas fa-sync-alt"></i>
-            <h3>Flexible Scheduling</h3>
-            <p>Our scheduling is flexible, allowing you to book sessions at your convenience, fitting perfectly into your busy calendar.</p>
-        </div>
-        <div class="reason">
-            <i class="fas fa-thumbs-up"></i>
-            <h3>Client Satisfaction</h3>
-            <p>Client satisfaction is our top priority, and we strive to exceed expectations with every project we undertake.</p>
-        </div>
+        <div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
+<div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
+
     </div>
 </section>
+
+<!-- Include Swiper JS at the bottom before closing </body> tag -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.reasons-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+
+
 <section id="process">
   <div class="container">
     <h1>Our Unique Process</h1>
@@ -191,3 +211,4 @@
 
 </body>
 </html>
+
