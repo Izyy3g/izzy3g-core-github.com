@@ -72,7 +72,7 @@ header nav ul li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('https://your-image-url.com'); /* Replace with your image URL */
+    background-image: url(''); /* Replace with your image URL */
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
@@ -294,99 +294,85 @@ footer {
   font-size: 16px;
   line-height: 1.6;
 }
+/* Base styles for the #why-us section to ensure no conflicts with other sections */
 #why-us {
     padding: 50px 0;
     background-color: #fff;
     text-align: center;
 }
 
-/* Ensure the swiper container is not constrained by width */
-.reasons-container {
+/* Ensure the swiper container within #why-us is not constrained by width */
+#why-us .swiper-container {
     width: 100%;
-    max-width: none;
+    overflow: hidden;  /* Prevents content from spilling out */
 }
 
-/* Specific card settings */
-.reason-card {
-    min-width: 300px;  /* Ensures cards have at least 500px width */
-    width: 800px;      /* Default desired width */
-    height: 300px;
-    padding: 20px;
-    background: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
-    border-radius: 8px;
+/* More specific selector to prevent overrides and ensure correct flex behavior */
+#why-us .swiper-wrapper {
+    display: flex;
+    flex-wrap: nowrap;  /* Ensures swiper slides are in a single line */
+    align-items: center;  /* Centers slides vertically */
+}
+
+/* Specific card settings with increased specificity */
+#why-us .swiper-slide.reason-card {
+    flex-shrink: 0;  /* Prevents the card from shrinking */
+    min-width: 300px;  /* Ensures minimum width */
+    width: 800px;      /* Sets the default desired width */
+    height: 300px;     /* Fixed height for consistency */
+    padding: 20px;     /* Padding inside the card */
+    background: #f9f9f9;  /* Background color */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);  /* Adds shadow for depth */
+    border-radius: 8px;  /* Rounded corners */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 10px;
+    margin: 15px;  /* Adds margin around each card for spacing */
 }
 
-.swiper-wrapper {
-    display: flex;
-}
-
-.swiper-button-prev, .swiper-button-next {
+/* Styling for navigation buttons with higher specificity and adjustments for visibility */
+#why-us .swiper-button-prev, #why-us .swiper-button-next {
     color: #333;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
-    background: #fff;
-    border: none;
+    z-index: 20;  /* High z-index to ensure visibility */
+    background: #fff;  /* White background to stand out */
+    border: 2px solid #333;  /* Adds visibility */
     border-radius: 50%;
-    padding: 5px 10px;
+    padding: 10px;
+    width: 34px;
+    height: 34px;
     cursor: pointer;
+    opacity: 0.8;
 }
 
-.swiper-button-prev {
+#why-us .swiper-button-prev {
     left: 10px;
 }
 
-.swiper-button-next {
-    right: 10px;
-}
-/* Arrows for navigation */
-.swiper-button-prev, .swiper-button-next {
-    color: #333;  /* Dark color for better visibility */
-    position: absolute;
-    top: 50%;  /* Centers vertically */
-    transform: translateY(-50%);
-    z-index: 50; /* Ensure they are above all other content */
-    background: #fff; /* White background to stand out */
-    border: 2px solid #333; /* Adds border for more visibility */
-    border-radius: 50%;
-    padding: 10px; /* Larger clickable area */
-    width: 34px; /* Specify width */
-    height: 34px; /* Specify height */
-    cursor: pointer;
-    opacity: 0.8; /* Slightly transparent for aesthetics, increase if needed */
-}
-
-.swiper-button-prev {
-    left: 10px;
-}
-
-.swiper-button-next {
+#why-us .swiper-button-next {
     right: 10px;
 }
 
-/* Increase visibility on hover */
-.swiper-button-prev:hover, .swiper-button-next:hover {
-    opacity: 1; /* Full visibility on hover */
+/* Hover effects for buttons to increase visibility on interaction */
+#why-us .swiper-button-prev:hover, #why-us .swiper-button-next:hover {
+    opacity: 1;  /* Full opacity on hover */
 }
 
+/* Media queries for responsiveness */
 @media (max-width: 960px) {
-    .reason-card {
-        width: 70%; /* Flexible width on medium screens */
-        height: auto; /* Automatic height adjustment */
+    #why-us .reason-card {
+        width: 70%;  /* Adjust width for medium screens */
+        height: auto;  /* Height adjusts to content */
     }
 }
 
 @media (max-width: 600px) {
-    .reason-card {
-        width: 90%; /* Nearly full width on very small screens */
-        height: auto; /* Automatic height adjustment */
+    #why-us .reason-card {
+        width: 90%;  /* Adjust width for small screens */
+        height: auto;  /* Height adjusts to content */
     }
 }
 
@@ -584,3 +570,4 @@ p {
     grid-column: auto; /* Resets to default single column layout for smaller screens */
   }
 }
+
