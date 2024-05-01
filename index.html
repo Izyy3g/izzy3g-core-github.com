@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Website-stylesheet.css">
     <title>Drone Aerial Photography Services</title>
 </head>
 <body>
     <header>
     <div class="header-inner">
-        <img src="https://dsm01pap008files.storage.live.com/y4mpATNmYwrK18J3oSlEkOJBBnnq9qjTX4i3DsAyvqWumQJmlIoL7De0Wq47y-Hmj5hVWGHUBmuTGW0N3uh954NCwZt3W-8_QRmw2Iyf6eqWY9-E0bZXtxevR7D12sq82UjSQo8kXNYB1zCikjlNuEH-wzrhzQfEMtIXMZMrCxpAouGI_E3KsdDcd63pahCi9y0CWqaCVEvTbbt-jr7f2D4nOHhqBcEOz0b5tRbHIJnTCc?encodeFailures=1&width=1851&height=872" alt="Company Logo" class="logo">
+        <img src="https://dsm01pap008files.storage.live.com/y4mxYj-P0qD0tIkO_bAarcvP5xamosxsaKbxHC-PSl6isTd4UtNA5ndw3s3QKFPykEkw5JgduEmch5U-CYPnR_O4wzW0uhLqCXQ4idp9cOe2eVUXwqEC9pjHHdkTP0jrN-mMohthvjsflMd-k7TAmlumKueCmosS9HiCYNR3cCYSSv8o75nCQ_o9WqFUX9h4knpRPgFvVG6RM1THaRXEtS-mxIcltd5m4Cr6GUa68acyMs?encodeFailures=1&width=714&height=141" alt="Company Logo" class="logo">
         <nav>
             <ul>
                 <li><a href="#services">Services</a></li>
@@ -97,21 +97,54 @@
 <div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
 
     </div>
-</section>
-
-<!-- Include Swiper JS at the bottom before closing </body> tag -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-    var swiper = new Swiper('.reasons-container', {
+    var swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
         slidesPerView: 'auto',
-        spaceBetween: 30,
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            600: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            960: {
+                slidesPerView: 1,
+                spaceBetween: 30
+            }
+        }
     });
 </script>
+<style>
+    #why-us .swiper-slide {
+        transition: transform 0.5s ease-in-out;  // Smooth transformation
+    }
 
+    @media (max-width: 600px) {
+        #why-us .swiper-slide.reason-card {
+            width: 90%;  // Full focus on the card
+            height: auto;  // Auto height based on content
+            perspective: 1000px;  // Adds perspective for 3D effect
+            backface-visibility: hidden;  // Improves 3D effect visibility
+        }
+    }
+</style>
 
 <section id="process">
   <div class="container">
@@ -208,6 +241,9 @@
         <p>© 2024 Drone Aerial Photography Services. All rights reserved.</p>
     </div>
 </footer>
+
+</body>
+</html>
 
 </body>
 </html>
