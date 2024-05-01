@@ -244,6 +244,80 @@ footer {
         display: none; /* Hides the Quick Links section on mobile devices */
     }
 }
+/* Base styles for the #why-us section to ensure no conflicts with other sections */
+#why-us {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Swiper container setup to ensure no overflow and proper width management */
+#why-us .swiper-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Flex settings for the swiper-wrapper to ensure proper alignment and no wrapping */
+#why-us .swiper-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* Card styles with high specificity to ensure they are not overridden */
+#why-us .swiper-slide.reason-card {
+    flex-shrink: 0;
+    min-width: 300px;
+    width: 200px !important;
+    height: 400px;
+    padding: 20px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/* Enhanced button visibility and positioning */
+#why-us .swiper-button-prev, #why-us .swiper-button-next {
+    color: #333;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 25;
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 50%;
+    padding: 10px;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#why-us .swiper-button-prev { left: 10px; }
+#why-us .swiper-button-next { right: 10px; }
+
+#why-us .swiper-button-prev:hover, #why-us .swiper-button-next:hover {
+    opacity: 1;
+}
+
+@media (max-width: 960px) {
+    #why-us .swiper-slide.reason-card {
+        width: 70%;
+    }
+}
+
+@media (max-width: 600px) {
+    #why-us .swiper-slide.reason-card {
+        width: 90%;
+    }
+}
+
 #services {
   text-align: center;
   padding: 50px 0;
@@ -294,87 +368,7 @@ footer {
   font-size: 16px;
   line-height: 1.6;
 }
-/* Base styles for the #why-us section to ensure no conflicts with other sections */
-#why-us {
-    padding: 50px 0;
-    background-color: #fff;
-    text-align: center;
-}
 
-/* Ensure the swiper container within #why-us is not constrained by width */
-#why-us .swiper-container {
-    width: 100%;
-    overflow: hidden;  /* Prevents content from spilling out */
-}
-
-/* More specific selector to prevent overrides and ensure correct flex behavior */
-#why-us .swiper-wrapper {
-    display: flex;
-    flex-wrap: nowrap;  /* Ensures swiper slides are in a single line */
-    align-items: center;  /* Centers slides vertically */
-}
-
-/* Specific card settings with increased specificity */
-#why-us .swiper-slide.reason-card {
-    flex-shrink: 0;  /* Prevents the card from shrinking */
-    min-width: 300px;  /* Ensures minimum width */
-    width: 800px;      /* Sets the default desired width */
-    height: 300px;     /* Fixed height for consistency */
-    padding: 20px;     /* Padding inside the card */
-    background: #f9f9f9;  /* Background color */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.12);  /* Adds shadow for depth */
-    border-radius: 8px;  /* Rounded corners */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 15px;  /* Adds margin around each card for spacing */
-}
-
-/* Styling for navigation buttons with higher specificity and adjustments for visibility */
-#why-us .swiper-button-prev, #why-us .swiper-button-next {
-    color: #333;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 20;  /* High z-index to ensure visibility */
-    background: #fff;  /* White background to stand out */
-    border: 2px solid #333;  /* Adds visibility */
-    border-radius: 50%;
-    padding: 10px;
-    width: 34px;
-    height: 34px;
-    cursor: pointer;
-    opacity: 0.8;
-}
-
-#why-us .swiper-button-prev {
-    left: 10px;
-}
-
-#why-us .swiper-button-next {
-    right: 10px;
-}
-
-/* Hover effects for buttons to increase visibility on interaction */
-#why-us .swiper-button-prev:hover, #why-us .swiper-button-next:hover {
-    opacity: 1;  /* Full opacity on hover */
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 960px) {
-    #why-us .reason-card {
-        width: 70%;  /* Adjust width for medium screens */
-        height: auto;  /* Height adjusts to content */
-    }
-}
-
-@media (max-width: 600px) {
-    #why-us .reason-card {
-        width: 90%;  /* Adjust width for small screens */
-        height: auto;  /* Height adjusts to content */
-    }
-}
 
 
 #process {
@@ -570,4 +564,3 @@ p {
     grid-column: auto; /* Resets to default single column layout for smaller screens */
   }
 }
-
