@@ -72,7 +72,7 @@ header nav ul li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('your-hero-image-url');
+    background-image: url('https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg');
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
@@ -101,73 +101,161 @@ header nav ul li a {
     .header-inner {
         flex-direction: column;
         justify-content: center;
+        align-items: center; /* Center items horizontally */
     }
 
     .logo {
         margin-bottom: 10px;
     }
+/* General styles for header navigation */
+header nav {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 80%; /* Adjust width as needed */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #000;
+    transition: left 0.3s;
+    flex-direction: column;
+    padding-top: 20px;
+    z-index: 1000;
+    align-items: flex-start; /* Aligns items to the left */
+    justify-content: flex-start; /* Aligns items to the top */
+}
 
+header nav.active {
+    left: 0;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0;
+    list-style: none;
+    text-align: left; /* Ensures text aligns to the left */
+}
+
+header nav ul li {
+    width: 100%;
+    margin: 10px 0;
+}
+
+header nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Mobile specific styles */
+@media (max-width: 768px) {
     .menu-toggle {
         display: block;
         position: absolute;
         right: 10px;
-        top: 6px;
+        top: 10px;
         font-size: 30px;
         color: white;
-        background-color: #4a90e2; /* Adding background color */
-        padding: 6px; /* Adding padding for better touch area */
-        border-radius: 5px; /* Rounded corners for aesthetics */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+        background-color: #4a90e2;
+        padding: 6px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
     }
 
     .close-menu {
-        display: none; /* Initially hidden */
+        display: none;
         position: absolute;
         right: 10px;
         top: 50px;
         font-size: 30px;
         color: white;
-        background-color: #e94e77; /* Distinctive color for close button */
-        padding: 10px; /* Same padding as toggle for consistency */
-        border-radius: 5px; /* Rounded corners */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Consistent shadow */
+        background-color: #e94e77;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
     }
+
+    nav {
+        display: none; /* Hide the navigation by default on mobile */
+    }
+
+    nav.active {
+        display: flex; /* Display nav when active */
+    }
+}
+
+
+/* Script for toggling the mobile menu */
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const closeMenu = document.querySelector('.close-menu');
+        const navigation = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', function() {
+            navigation.classList.add('active');
+            menuToggle.style.display = 'none';
+            closeMenu.style.display = 'block';
+        });
+
+        closeMenu.addEventListener('click', function() {
+            navigation.classList.remove('active');
+            closeMenu.style.display = 'none';
+            menuToggle.style.display = 'block';
+        });
+    });
+</script>
 
     header nav.active + .close-menu {
         display: block; /* Show close button when menu is active */
     }
+header nav {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+	height: 300px;
+    background-color: black;
+    transition: left 0.3s;
+    flex-direction: column;
+    padding-top: 20px;
+    z-index: 1000;
+    align-items: flex-start; /* Aligns items to the left */
+    justify-content: flex-start; /* Aligns items to the top */
+}
 
-    header nav {
-        position: fixed;
-        left: -100%;
-        top: 0;
-        bottom: 0;
-        width: 200px;
-		height:300px;
-        background-color: #000;
-        transition: left 0.3s;
-        flex-direction: column;
-        padding-top: 20px;
-        z-index: 1000;
-        align-items: flex-start; /* Aligns items to the left */
-        justify-content: flex-start; /* Aligns items to the top */
-    }
+header nav.active {
+    left: 0;
+}
 
-    header nav.active {
-        left: 0;
-    }
+header nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0;
+    list-style: none;
+    text-align: left; /* Ensures text aligns to the left */
+}
 
-    header nav ul {
-        flex-direction: column;
-        width: 100%;
-        text-align: left; /* Ensures text aligns to the left */
-    }
+header nav ul li {
+    width: 100%;
+    margin: 10px 0;
+}
 
-    header nav ul li {
-        text-align: left;
-        width: 100%;
-        margin: 10px 0;
-    }
+header nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
 
     .quote-button {
         display: none; /* Hide quote button on mobile */
@@ -431,7 +519,7 @@ p {
     background-color: #333;
 }
 @media (min-width: 601px) {
-    .step::before {
+    .step:not(:last-child)::before {
         content: '→';
         display: inline;
         position: absolute;
@@ -469,6 +557,7 @@ p {
         display: none;
     }
 }
+
 #get-quote {
     background-color: #fafafa;
     color: #333;
