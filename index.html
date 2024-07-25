@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Website-stylesheet.css">
     <title>Drone Aerial Photography Services</title>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <img src="https://dsm01pap008files.storage.live.com/y4mjnbYYyuPFmdJ5D5WG6-IDhlF6E0Fbl9ZWjliyrBGbb5kcMVu8n6HEmQmdskFkCKvEUwTBJ4uC8HitPXRZM22TA9xHXpqLjef_KawUD7uMwh4Rj2nqa_CSc_3gL5uUlzCnji7KULVLlv9Z84NydwMC1q5RY8OjHu5H0D0WN6nJJqMpxKJ_wuBZk7bQP4Cbo4blRHk93wovNfA1TgumeCA_Q?encodeFailures=1&width=977&height=146" class="logo">
-            <span class="menu-toggle">&#9776;</span> <!-- Menu icon for mobile -->
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <a href="#quote" class="quote-button">Get a Free Quote</a>
-            <div class="close-menu">&#10005;</div> <!-- Close icon for mobile menu -->
-        </div>
-    </header>
+<header>
+    <div class="header-inner">
+        <img src="https://dsm01pap008files.storage.live.com/y4mVYyW_lvRRypCF5ctSUi1TVMdEL_b4NZze3x8TEsXZTNRPi4uPjrulKxg2gcp2OIhbhAl8Daa1wh-nM6sssw2RajhhUPmHvM16nM_Y37391_oyxeEpxZr_JjWsTYROoF3rtZdluWXGezjLS2QObQhMHDQ5H-s_sw7pjcK0biKBnc8d3VVdTmBjTfMz6WRR-wp_WzXHirm9ktgROFz5OK-brNY_YWYFVzcsG6JRsKY9RE?encodeFailures=1&width=977&height=146" class="logo" alt="Logo">
+        <span class="menu-toggle">&#9776;</span> <!-- Menu icon for mobile -->
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="realestatepage.html">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="close-menu">&#10005;</div> <!-- Close icon for mobile menu -->
+    </div>
+</header>
 
+
+<p> 
     <div class="hero-image">
         <div class="hero-text">
             <h2>Capturing Your World From Above</h2>
@@ -39,12 +40,12 @@
         <h2>Our Services</h2>
         <div class="service-container">
             <div class="service-box" onclick="location.href='#real-estate';">
-                <img src="https://images.pexels.com/photos/356807/pexels-photo-356807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Real Estate Photography">
+                <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" alt="Real Estate Photography">
                 <h3>Real Estate Photography</h3>
                 <p>High-quality aerial shots to showcase property listings.</p>
             </div>
             <div class="service-box" onclick="location.href='#weddings';">
-                <img src="https://images.pexels.com/photos/10562431/pexels-photo-10562431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Wedding Photography">
+                <img src="file:///C:/Users/angel/Downloads/DJI_20240526200016_0002_D%20(1).JPG" alt="Wedding Photography">
                 <h3>Event Photography (coming soon...)</h3>
                 <p>Capture your special day from a stunning perspective.</p>
             </div>
@@ -55,22 +56,27 @@
             </div>
         </div>
     </section> 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const closeMenu = document.querySelector('.close-menu');
+        const navigation = document.querySelector('nav');
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const closeMenu = document.querySelector('.close-menu');
-            const navigation = document.querySelector('header nav');
-
-            menuToggle.addEventListener('click', function() {
-                navigation.classList.add('active');
-            });
-
-            closeMenu.addEventListener('click', function() {
-                navigation.classList.remove('active');
-            });
+        menuToggle.addEventListener('click', function() {
+            navigation.classList.add('active');
+            menuToggle.style.display = 'none';
+            closeMenu.style.display = 'block';
         });
-    </script>
+
+        closeMenu.addEventListener('click', function() {
+            navigation.classList.remove('active');
+            closeMenu.style.display = 'none';
+            menuToggle.style.display = 'block';
+        });
+    });
+</script>
+
+    
 </body>
 <section id="why-us" style="position: relative; z-index: 1;">
     <h2>Why Choose Us?</h2>
@@ -140,34 +146,38 @@
 </script>
 
 
+
+
+
 <section id="process">
   <div class="container">
     <h1>Our Unique Process</h1>
     <p>We deliver professional drone services with a seamless client experience.</p>
- <div class="steps">
-  <div class="step">
-    <i class="fas fa-bullhorn"></i>
-    <h2>Tell us about your project</h2>
-    <p>Share your vision with us and we'll draft a plan to make it a reality.</p>
-  </div>
- 
-  <div class="step">
-    <i class="fas fa-calendar-check"></i>
-    <h2>Planning</h2>
-    <p>We prepare every detail to ensure a smooth operation on the day of the shoot.</p>
-  </div>
-  
-  <div class="arrow desktop-only">&#8594;</div>
-  <div class="step">
-    <i class="fas fa-photo-video"></i>
-    <h2>Delivery</h2>
-    <p>You receive high-quality images and footage promptly after the shoot.</p>
-  </div>
-</div>
-
+    <div class="steps">
+      <div class="step">
+        <i class="fas fa-bullhorn"></i>
+        <h2>Tell us about your project</h2>
+        <p>Share your vision with us and we'll draft a plan to make it a reality.</p>
+      </div>
+      <div class="arrow desktop-only">&#8594;</div>
+      <div class="step">
+        <i class="fas fa-calendar-check"></i>
+        <h2>Planning</h2>
+        <p>We prepare every detail to ensure a smooth operation on the day of the shoot.</p>
+      </div>
+      <div class="arrow desktop-only">&#8594;</div>
+      <div class="step">
+        <i class="fas fa-photo-video"></i>
+        <h2>Delivery</h2>
+        <p>You receive high-quality images and footage promptly after the shoot.</p>
+      </div>
+    </div>
     <button class="get-started">Get Started</button>
   </div>
 </section>
+
+
+
 	<section id="get-quote">
   <div class="container">
     <h2>Get a Quote Now</h2>
