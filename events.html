@@ -135,5 +135,77 @@
             <p>© 2024 Drone Aerial Photography Services. All rights reserved.</p>
         </div>
     </footer>
+    
+    <!-- Include Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("t6mPaFPBsz1Mi5Z9f"); // Replace 'YOUR_USER_ID' with your actual User ID from EmailJS
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('service_clmtael', 'template_76d32af', this)
+                .then(function() {
+                    alert('Message sent successfully!');
+                }, function(error) {
+                    alert('Failed to send the message. Error: ' + JSON.stringify(error));
+                });
+        });
+
+        document.getElementById('footer-contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('service_clmtael', 'template_76d32af', this)
+                .then(function() {
+                    alert('Message sent successfully!');
+                }, function(error) {
+                    alert('Failed to send the message. Error: ' + JSON.stringify(error));
+                });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navigation = document.querySelector('nav');
+
+            function openMenu() {
+                navigation.classList.add('active');
+                menuToggle.style.display = 'none';
+            }
+
+            function closeMenu() {
+                navigation.classList.remove('active');
+                menuToggle.style.display = 'block';
+            }
+
+            menuToggle.addEventListener('click', openMenu);
+
+            document.addEventListener('click', function(event) {
+                const isClickInside = navigation.contains(event.target) || menuToggle.contains(event.target);
+                if (!isClickInside) {
+                    closeMenu();
+                }
+            });
+
+            var swiper = new Swiper('.swiper-container', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                loop: true, // Enable looping for an infinite scroll effect
+                coverflowEffect: {
+                    rotate: 0, // Keep cards upright
+                    stretch: 0,
+                    depth: 250, // Increase depth to enhance the 3D effect
+                    modifier: 1, // Affects how much the slides move in 3D space
+                    slideShadows: true, // Enable shadows for a deeper 3D effect
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        });
+    </script>
 </body>
 </html>
