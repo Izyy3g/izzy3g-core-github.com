@@ -282,6 +282,27 @@
             });
         });
     </script>
+    <script>
+  document.getElementById("pay-deposit").addEventListener("click", async () => {
+    try {
+      const res = await fetch("/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          item: "Drone Shoot Deposit",
+          amount: 5000 // cents = $50.00
+        })
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Failed to start checkout");
+
+      window.location.href = data.url;
+    } catch (err) {
+      alert("Payment setup failed: " + err.message);
+    }
+  });
+</script>
 </body>
 </html>
 
